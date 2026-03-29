@@ -67,6 +67,16 @@ Installation
 
 myPort = new Serial(this, Serial.list()[PORT_NUMBER], 115200);
 
+Run calibration code
+Follow these instructions:
+To use this code, connect the servo to the PCA9685 board, note the channel number, update the code, upload it, then check the MAX PWM values and MIN PWM values to see whether you are at the MAX or MIN values. The servo won't move when using "+" or "-".
+Example:
+int servoChannel = 1;   // Change for each servo
+int pwmValue = 325;     // Start near center
+
+Typical MIN and MAX PWM values are around 85 to 600, depending on the servo.
+Please use this code if you don't want to waste money on stripped servos.
+
 5. Run the Processing sketch.
 
 Future Improvements
