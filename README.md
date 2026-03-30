@@ -47,7 +47,9 @@ Safety Considerations
 Servo motors, particularly high-torque models like the MG996R, require significant current, especially when operating under load. Powering these directly from the Arduino is not recommended and can result in the following:
 
 Permanent damage to the Arduino
+
 Random resets or unstable system behaviour
+
 Potential overheating of the board or servos
 
 Always use a dedicated external power supply for the servo motors. Verify that the supply can provide sufficient current for all servos operating simultaneously. Additionally, ensure all connections are secure and insulated to prevent short circuits.
