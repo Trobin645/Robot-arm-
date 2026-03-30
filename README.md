@@ -1,7 +1,13 @@
 6 DOF Robot Arm Control System
+
 Overview
+
 This project is a real-time control system for a 6 Degrees of Freedom (DOF) robotic arm.
-A custom interface built using Processing lets the user control each joint using sliders. The interface communicates with an Arduino through serial communication, allowing the robot arm to move smoothly and accurately.
+
+A custom interface built using Processing lets the user control each joint using sliders. 
+
+The interface communicates with an Arduino through serial communication, allowing the robot arm to move smoothly and accurately.
+
 This system combines concepts from:
 Robotics
 Human–computer interaction
