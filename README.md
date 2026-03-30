@@ -16,16 +16,23 @@ Wrist Yaw
 Claw
 🎚️ Real-time slider control
 📍 Preset positions:
+
 Home
 Upright
 Pick
 Release
 Demo sequence
+
 🛑 Emergency stop function
+
 ⚡ Efficient communication (only sends data when values change)
+
 🖥️ Full-screen responsive interface using ControlP5
+
 🧰 Technologies Used
+
 Processing (Java-based)
+
 ControlP5 (GUI library)
 Arduino
 Serial communication
