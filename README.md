@@ -1,153 +1,53 @@
-6 DOF Robot Arm Control System
-
+Hardware Setup
 Overview
 
-This project is a real-time control system for a 6 Degrees of Freedom (DOF) robotic arm.
+This project uses a 6 Degrees of Freedom (DOF) robotic arm controlled via an Arduino microcontroller and a PCA9685 PWM driver. The hardware setup ensures precise control of each servo motor while maintaining safe and stable operation. A dedicated external power supply provides the current required by all servos, avoiding overloading the microcontroller.
 
-A custom interface built using Processing lets the user control each joint using sliders. 
+This section describes the components used, wiring guidelines, power setup, and safety considerations.
 
-The interface communicates with an Arduino through serial communication, allowing the robot arm to move smoothly and accurately.
+Components
 
-This system combines concepts from:
-Robotics
-Human–computer interaction
-Embedded systems
+The robot arm is built using the following components:
 
-Features
-Control of 6 servo joints:
-Base
-Shoulder
-Elbow
-Wrist
-Wrist Yaw
-Claw
-Real-time slider control
-Preset positions:
+Microcontroller: Arduino Uno R3
+The Arduino acts as the central control unit, sending commands to the servo driver via serial communication.
+Servo Driver: PCA9685 PWM driver
+The PCA9685 allows the control of multiple servos simultaneously with high precision and reduces the load on the Arduino. It receives commands from the Arduino and outputs PWM signals to each servo.
+Servo Motors:
+3 × MG996R (high-torque servos, used for the base, shoulder, and elbow joints)
+3 × SG90 / MG90S (smaller servos, used for wrist, wrist yaw, and claw joints)
+Power Supply:
+6V 5A external power supply
+DC barrel jack for connecting the power supply to the PCA9685
+Connections:
+Jumper wires for signal and power routing
+Power Setup
 
-Home
-Upright
-Pick
-Release
-Demo sequence
+Servos are powered exclusively through the external 6V 5A power supply connected to the PCA9685. This ensures that all servos receive sufficient current to operate reliably, especially under load.
 
-Emergency stop function
+The Arduino is used solely to provide control signals to the PCA9685. It is not used to power the servos. Drawing power for multiple high-torque servos from the Arduino can lead to instability and potential damage to the board.
 
-Efficient communication (only sends data when values change)
+Wiring Guidelines
 
-Full-screen responsive interface
-Technologies Used
+To ensure correct operation, follow these wiring guidelines:
 
-Processing (Java-based)
+Power Connections:
+Connect the positive output of the external power supply to the V+ terminal on the PCA9685.
+Connect the negative output (ground) of the power supply to the GND terminal on the PCA9685.
+Arduino to PCA9685:
+Connect the SDA pin on the Arduino to the SDA input on the PCA9685.
+Connect the SCL pin on the Arduino to the SCL input on the PCA9685.
+Common Ground:
+Connect the Arduino GND to the PCA9685 GND to ensure a shared reference voltage. This is critical for accurate control and to avoid erratic servo behavior.
+Servo Channels:
+Each servo is connected to a designated channel on the PCA9685, corresponding to the channel configuration in the Arduino code.
+Ensure the wiring matches the channel numbers exactly to prevent unexpected movements.
+Safety Considerations
 
-Arduino
+Servo motors, particularly high-torque models like the MG996R, require significant current, especially when operating under load. Powering these directly from the Arduino is not recommended and can result in the following:
 
-Serial communication
+Permanent damage to the Arduino
+Random resets or unstable system behaviour
+Potential overheating of the board or servos
 
-Servo motors
-
-PCA9685 PWM driver
-
-How It Works
-The user moves sliders in the interface
-Each slider controls a servo angle
-The angles are sent to the Arduino via serial communication
-The Arduino updates the servo positions
-Example Command:
-
-90,120,85,90,45,30
-Each number represents a servo angle (in degrees).
-🎮 Controls
-HOME → Reset to default position
-UPRIGHT → Move arm vertically
-PICK → Close the claw
-RELEASE → Open the claw
-STOP → Emergency stop
-
-Installation & Setup
-
-1. Install Required Software
-Install Arduino IDE
-Install Processing
-Install the Adafruit PWM Servo Driver library
-
-2. Calibrate the Servos
-Before assembling the robot arm, each servo must be calibrated.
-Steps:
-Connect a servo to the PCA9685 PWM driver
-Set the correct channel number in the code
-Upload the calibration code to the Arduino
-Open the Serial Monitor
-Use the controls to find:
-Minimum (MIN) PWM value
-Maximum (MAX) PWM value
-You’ll know you’ve reached the limit when the servo stops moving.
-
-Calculate the centre value:
-
-(MIN + MAX) ÷ 2
-Set the centre value in your code:
-C++
-int servoChannel = 1;
-int pwmValue = 325; // example centre value
-Upload the code and type "s" in the Serial Monitor to test
-
-3. Update Main Code Values
-Replace the MIN and MAX values in your main Arduino code:
-C++
-#define BASE_MIN 135
-#define BASE_MAX 540
-
-#define SHOULDER_MIN 130
-#define SHOULDER_MAX 535
-
-#define ELBOW_MIN 130
-#define ELBOW_MAX 540
-
-#define WRIST_MIN 130
-#define WRIST_MAX 520
-
-#define WRIST_YAW_MIN 130
-#define WRIST_YAW_MAX 540
-
-#define CLAW_MIN 120
-#define CLAW_MAX 350
-Make sure servo channels match:
-C++
-pwm.setPWM(0, 0, basePWM);
-pwm.setPWM(1, 0, shoulderPWM);
-pwm.setPWM(2, 0, elbowPWM);
-pwm.setPWM(3, 0, wristPWM);
-pwm.setPWM(4, 0, wristYawPWM);
-pwm.setPWM(5, 0, clawPWM);
-
-4. Serial Connection Setup
-Update the port in Processing:
-Java
-myPort = new Serial(this, Serial.list()[PORT_NUMBER], 115200);
-5. Run the System
-Upload Arduino code
-Run the Processing sketch
-Start controlling the robot arm
-
-Notes:
-
-Typical PWM range: ~85 to 600 (depends on servo)
-
-Always calibrate to avoid damaging servos
-
-Your project uses custom PWM values, so others should recalibrate if using different servos
-
-Future Improvements
-
-
-Inverse kinematics (automatic positioning)
-
-Motion path planning
-
-3D visualisation of the arm
-
-Autonomous pick-and-place system
-
-👤 Author
-
-Wisdom Daramola
+Always use a dedicated external power supply for the servo motors. Verify that the supply can provide sufficient current for all servos operating simultaneously. Additionally, ensure all connections are secure and insulated to prevent short circuits.
