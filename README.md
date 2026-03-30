@@ -113,6 +113,7 @@ myPort = new Serial(this, Serial.list()[PORT_NUMBER], 115200);
 Upload Arduino code
 Run the Processing sketch
 Start controlling the robot arm 🎯
+
 📊 Notes
 Typical PWM range: ~85 to 600 (depends on servo)
 Always calibrate to avoid damaging servos
