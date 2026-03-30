@@ -1,92 +1,49 @@
-6 DOF Robot Arm Control System 🦾
+This folder contains all the CAD files required to build the 6 DOF robot arm.
 
-Overview
+Note:
 
-This project is a real-time control system for a 6 Degrees of Freedom (DOF) robotic arm.
-A custom graphical interface built with Processing allows the user to control each servo joint interactively. The software communicates with an Arduino microcontroller using serial communication to move the robot arm smoothly and precisely.
+The CAD models were not created by me.
+My contribution focuses on improving the control system, code efficiency, and usability of the robot arm.
 
-The system demonstrates principles from robotics, human-machine interfaces, and embedded systems.
+Assembly Instructions
 
-Features
+To assemble the robot arm, follow this video guide:
 
-- Control of 6 servo joints:
-  - Base
-  - Shoulder
-  - Elbow
-  - Wrist
-  - Wrist Yaw
-  - Claw
-- Real-time slider-based GUI control
-- Preset positions:
-  - Home
-  - Upright
-  - Pick
-  - Release
-  - Demo seq
-- Emergency stop system
-- Optimized serial communication (only sends data when angles change)
-- Responsive fullscreen interface built with ControlP5
+YouTube https://www.youtube.com/watch?v=ZEir102PxJ8&t=0s
 
-Technologies Used
 
-- Processing (Java-based)
-- ControlP5 GUI library
-- Arduino
-- Serial communication
-- Servo motors
+Important Assembly Notes
 
-How It Works
+1. Base Setup
+While assembling the base servo, ensure the PCA9685 PWM driver is already connected to the Arduino Uno R3
 
-1. The user moves sliders in the Processing interface.
-2. Each slider represents a servo angle.
-3. The software sends the angles to the Arduino via serial communication.
-4. The Arduino updates the servo positions on the robot arm.
+Position the PCA9685 board next to the base servo inside the base for clean wiring and compact design
 
-Example Command Sent to Arduino
 
-90,120,85,90,45,30
+2. Servo Connections
 
-Each number represents a servo angle in degrees.
+After completing the mechanical assembly:
 
-Demo
+Connect all servo wires to the PCA9685
 
-Example controls in the interface include:
+Ensure each servo is plugged into the correct channel (0–5)
 
-- HOME – resets the robot to the default position
-- UPRIGHT – positions the arm vertically
-- PICK – closes the claw
-- RELEASE – opens the claw
-- STOP – emergency stop
+Match each channel with your code configuration
 
-Installation
+3. Power Connection
 
-1. Install Processing
-2. Install the ControlP5 library
-3. Connect the Arduino with the robot arm
-4. Update the serial port in the code:
+Connect the DC jack to the green screw terminals on the PCA9685:
 
-myPort = new Serial(this, Serial.list()[PORT_NUMBER], 115200);
+V+ → Power supply positive
+GND → Power supply ground
 
-Run calibration code
-Follow these instructions:
-To use this code, connect the servo to the PCA9685 board, note the channel number, update the code, upload it,open serial monitor, then check the MAX PWM values and MIN PWM values to see whether you are at the MAX or MIN values. The servo won't move when using "+" or "-".
+This powers all servos safely using the external supply
 
-Example:
-int servoChannel = 1;   // Change for each servo
-int pwmValue = 325;     // Start near center
+Important Reminder
 
-Typical MIN and MAX PWM values are around 85 to 600, depending on the servo.
-Please use this code if you don't want to waste money on stripped servos.
+Double-check all wiring before powering the system
+Ensure correct servo channel mapping
+Keep wiring neat to avoid interference or loose connection
+Credits
 
-5. Run the Processing sketch.
-
-Future Improvements
-
-- Inverse kinematics for automatic positioning
-- Motion path planning
-- 3D robot arm visualization
-- Autonomous pick-and-place routines
-
-Author
-
-Wisdom Daramola
+Full credit for the CAD design goes to Fabri Creator
