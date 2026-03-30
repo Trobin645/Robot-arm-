@@ -1,12 +1,13 @@
-🦾 6 DOF Robot Arm Control System
-📌 Overview
+6 DOF Robot Arm Control System
+Overview
 This project is a real-time control system for a 6 Degrees of Freedom (DOF) robotic arm.
 A custom interface built using Processing lets the user control each joint using sliders. The interface communicates with an Arduino through serial communication, allowing the robot arm to move smoothly and accurately.
 This system combines concepts from:
 Robotics
 Human–computer interaction
 Embedded systems
-⚙️ Features
+
+Features
 Control of 6 servo joints:
 Base
 Shoulder
@@ -14,8 +15,8 @@ Elbow
 Wrist
 Wrist Yaw
 Claw
-🎚️ Real-time slider control
-📍 Preset positions:
+Real-time slider control
+Preset positions:
 
 Home
 Upright
@@ -23,21 +24,23 @@ Pick
 Release
 Demo sequence
 
-🛑 Emergency stop function
+🛑Emergency stop function
 
-⚡ Efficient communication (only sends data when values change)
+Efficient communication (only sends data when values change)
 
-🖥️ Full-screen responsive interface using ControlP5
-
-🧰 Technologies Used
+Full-screen responsive interface
+Technologies Used
 
 Processing (Java-based)
 
-ControlP5 (GUI library)
 Arduino
+
 Serial communication
+
 Servo motors
+
 PCA9685 PWM driver
+
 🔄 How It Works
 The user moves sliders in the interface
 Each slider controls a servo angle
