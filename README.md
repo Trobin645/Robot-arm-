@@ -117,10 +117,14 @@ Start controlling the robot arm 🎯
 Typical PWM range: ~85 to 600 (depends on servo)
 Always calibrate to avoid damaging servos
 Your project uses custom PWM values, so others should recalibrate if using different servos
+
 🚀 Future Improvements
+
 Inverse kinematics (automatic positioning)
 Motion path planning
 3D visualisation of the arm
 Autonomous pick-and-place system
+
 👤 Author
+
 Wisdom Daramola
