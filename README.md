@@ -30,7 +30,7 @@ Pick
 Release
 Demo sequence
 
-🛑Emergency stop function
+Emergency stop function
 
 Efficient communication (only sends data when values change)
 
@@ -47,7 +47,7 @@ Servo motors
 
 PCA9685 PWM driver
 
-🔄 How It Works
+How It Works
 The user moves sliders in the interface
 Each slider controls a servo angle
 The angles are sent to the Arduino via serial communication
@@ -62,11 +62,14 @@ UPRIGHT → Move arm vertically
 PICK → Close the claw
 RELEASE → Open the claw
 STOP → Emergency stop
-🛠️ Installation & Setup
+
+Installation & Setup
+
 1. Install Required Software
 Install Arduino IDE
 Install Processing
 Install the Adafruit PWM Servo Driver library
+
 2. Calibrate the Servos
 Before assembling the robot arm, each servo must be calibrated.
 Steps:
@@ -77,7 +80,8 @@ Open the Serial Monitor
 Use the controls to find:
 Minimum (MIN) PWM value
 Maximum (MAX) PWM value
-👉 You’ll know you’ve reached the limit when the servo stops moving.
+You’ll know you’ve reached the limit when the servo stops moving.
+
 Calculate the centre value:
 
 (MIN + MAX) ÷ 2
@@ -86,6 +90,7 @@ C++
 int servoChannel = 1;
 int pwmValue = 325; // example centre value
 Upload the code and type "s" in the Serial Monitor to test
+
 3. Update Main Code Values
 Replace the MIN and MAX values in your main Arduino code:
 C++
@@ -114,6 +119,7 @@ pwm.setPWM(2, 0, elbowPWM);
 pwm.setPWM(3, 0, wristPWM);
 pwm.setPWM(4, 0, wristYawPWM);
 pwm.setPWM(5, 0, clawPWM);
+
 4. Serial Connection Setup
 Update the port in Processing:
 Java
@@ -121,18 +127,25 @@ myPort = new Serial(this, Serial.list()[PORT_NUMBER], 115200);
 5. Run the System
 Upload Arduino code
 Run the Processing sketch
-Start controlling the robot arm 🎯
+Start controlling the robot arm
 
-📊 Notes
+Notes:
+
 Typical PWM range: ~85 to 600 (depends on servo)
+
 Always calibrate to avoid damaging servos
+
 Your project uses custom PWM values, so others should recalibrate if using different servos
 
-🚀 Future Improvements
+Future Improvements
+
 
 Inverse kinematics (automatic positioning)
+
 Motion path planning
+
 3D visualisation of the arm
+
 Autonomous pick-and-place system
 
 👤 Author
