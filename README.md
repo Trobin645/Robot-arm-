@@ -15,6 +15,7 @@ YouTube https://www.youtube.com/watch?v=ZEir102PxJ8&t=0s
 Important Assembly Notes
 
 1. Base Setup
+
 While assembling the base servo, ensure the PCA9685 PWM driver is already connected to the Arduino Uno R3
 
 Position the PCA9685 board next to the base servo inside the base for clean wiring and compact design
