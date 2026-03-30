@@ -69,6 +69,7 @@ Run calibration code
 Follow these instructions:
 To use this code, connect the servo to the PCA9685 board, note the channel number, update the code, upload it, open the serial monitor, then check the MAX PWM values and MIN PWM values. To see whether you are at the MAX or MIN values, the servo won't move when using "+" or "-".
 Note each servo's PWM values down, then add the MAX and MIN together, then divide by two. Note the middle PWM value number down, then go to the code then input the number in this part "int pwmValue = 325;".
+Example: int servoChannel = 1; // Change for each servo int pwmValue = 325; // Start near center
 Upload the code, open the serial monitor, then enter"s".
 
 The noted MAX and MIN values should be changed in the main Arduino code in:
@@ -97,9 +98,6 @@ pwm.setPWM(0, 0, basePWM);
     pwm.setPWM(4, 0, wristYawPWM);
     pwm.setPWM(5, 0, clawPWM);
   
-Example:
-int servoChannel = 1;   // Change for each servo
-int pwmValue = 325;     // Start near center
 
 Typical MIN and MAX PWM values are around 85 to 600, depending on the servo.
 Please use this code to avoid purchasing servos because the attached Arduino code uses my specific servo PWM values.
