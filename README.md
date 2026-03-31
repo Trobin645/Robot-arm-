@@ -87,3 +87,5 @@ Random resets or unstable system behaviour
 Potential overheating of the board or servos
 
 Always use a dedicated external power supply for the servo motors. Verify that the supply can provide sufficient current for all servos operating simultaneously. Additionally, ensure all connections are secure and insulated to prevent short circuits.
+
+Wiring Image https://github.com/user-attachments/assets/b513b857-9583-4764-8285-e9ee922f829e
