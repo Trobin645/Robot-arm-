@@ -79,6 +79,7 @@ Compare with the wiring diagram when done.
 Safety Considerations
 
 Servo motors, particularly high-torque models like the MG996R, require significant current, especially when operating under load. 
+
 Powering these directly from the Arduino is not recommended and can result in the following:
 
 Permanent damage to the Arduino
