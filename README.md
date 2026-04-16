@@ -18,9 +18,6 @@ https://github.com/user-attachments/assets/d1acf517-ed5e-44ce-ad53-f962ddfd8ea6
 
 ## Interface
 
-https://github.com/user-attachments/assets/2c1df6f4-cb75-40f9-a7c7-f299f00f857e
-
-https://github.com/user-attachments/assets/4d2e27a2-fe18-4309-b440-4525abce7635
 
 ## Overview
 
