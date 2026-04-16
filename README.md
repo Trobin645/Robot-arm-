@@ -8,15 +8,17 @@ A real-time control interface for a 6 Degrees of Freedom (DOF) robotic arm. Buil
 
 ## Robot Arm
 
-https://github.com/user-attachments/assets/a3e858a0-f781-4d5d-b8b6-2898b0411ebd
- https://github.com/user-attachments/assets/a58a5560-9372-4583-88ed-2a65b75b0425
- https://github.com/user-attachments/assets/39d8f225-0105-45bd-a9ad-ae85d4f3938f
+<img width="1536" height="2048" alt="image" src="https://github.com/user-attachments/assets/d354ece1-a1e9-4b32-977d-b9384e83653c" />
+<img width="1536" height="2048" alt="image" src="https://github.com/user-attachments/assets/ecf7ea0e-18cc-438f-b5b2-f28e9cb00dad" />
+<img width="1536" height="2048" alt="image" src="https://github.com/user-attachments/assets/2de9cab7-6c86-4a84-8173-d1c911de9b57" />
+
 
 ## Demo
 
 https://github.com/user-attachments/assets/d1acf517-ed5e-44ce-ad53-f962ddfd8ea6
 
 ## Interface
+<img width="1600" height="865" alt="IMG-20260304-WA0010 (002)" src="https://github.com/user-attachments/assets/ac396e62-8788-4f65-b2b9-1c8d0f7cf6e8" />
 
 
 ## Overview
