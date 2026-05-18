@@ -197,4 +197,10 @@ myPort = new Serial(this, Serial.list()[PORT_NUMBER], 115200);
 
 ## Author
 
-**Wisdom Daramola**
+**Wisdom Daramola — UTC Derby Pride Park, Derby**
+
+I physically designed, assembled and wired this project, and carried out all servo calibration and hands-on debugging to get the system working. 
+
+The Arduino firmware and Processing GUI were generated using AI tools. 
+
+Using AI to generate code is a normal part of modern engineering — the hardware build, calibration, testing and problem solving were all done by me.
